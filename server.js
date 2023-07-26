@@ -1,29 +1,36 @@
-'use strict';
+"use strict";
 
-console.log('Our first server');
+console.log("Our first server");
 
 // Things (Packages) I need to install via the terminal
 // install express - npm i express
 // install dotenv - npm i dotenv
 // install nodemon - npm i -g nodemon - I only do this once for ALL TIME
-
+// install CORS - npm i cor
 
 // REQUIRE
 // In our server we have to use "require" instead of import
 
 // to create a server we are bringing express:
-const express = require('express');
+const express = require("express");
 
 // we need this to bring in variables from our .env files:
-require('dotenv').config();
+require("dotenv").config();
 
 // bring in the json data:
-let data = require('../city-explorer-api/data/weather.json')
+// let data = require("./pets.json");
+// let data = require("./weather.json");
+
+// we need CORS to share data with the front end
+const cors = require("cors");
 
 // USE
 // Once we require something we need to use it.
 // this is 2 steps for express (react did it in one with import)
 const app = express();
+
+// use cors as middleware
+app.use(cors());
 
 // PORT
 // define our port
@@ -44,11 +51,11 @@ const PORT = process.env.PORT || 3002;
 // app.get takes in 2 arguments
 // 1 - the url as a string ( '/' would be the root )
 // 2 - a callback function
-app.get('/', (request, response) => {
-  response.send('hello, from our server');
+app.get("/", (request, response) => {
+  response.send("hello, from our server");
 });
 
-app.get('/sayHello', (request, response) => {
+app.get("/sayHello", (request, response) => {
   console.log(request.query.firstName);
   // the incoming request URL looks like this:
   // http://localhost:3001/sayHello?firstName=Adnan&lastName=Mohamud
@@ -56,17 +63,43 @@ app.get('/sayHello', (request, response) => {
   let firstName = request.query.firstName;
   let lastName = request.query.lastName;
   response.send(`hi ${firstName} ${lastName}`);
-})
+});
 
+// app.get("/pet", (request, response) => {
+//   try {
+//     // http://localhost:3001/pets?species=dog
+//     let userSearchingForSpecies = request.query.species;
+//     let dataFromJSON = data.find(
+//       (pet) => pet.species === userSearchingForSpecies
+//     );
+//     let dataToSend = new pet(dataFromJSON);
+//     response.send(dataToSend);
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
 // * - catch all (wildcard)
 // if the user comes to a route we haven't defined
 // put this at the botton of all your routes
-app.get('*', (request, response) => {
-  response.send('The thing you are looking for doesn\'t exist');
-})
+app.get("*", (request, response) => {
+  response.send("The thing you are looking for doesn't exist");
+});
 
+// CLASSES
 
+// class Pet {
+//   constructor(petObject) {
+//     this.name = petObject.name;
+//     this.breed = petObject.breed;
+//   }
+// }
+
+// ERRORS
+// Handle any errors
+app.use((error, request, response, next) => {
+  response.status(500).send(error.message);
+});
 
 // LISTEN
 // start our server
