@@ -1,9 +1,8 @@
-# city-explorer-api
+# City Explorer API
 
-## Project Name
+**Author**: Adnan Mohamud
 
-**Author**: Your Name Goes Here
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Version**: 1.0.2
 
 ## Overview
 
@@ -26,6 +25,8 @@ City Explorer is built using the MERN stack, which includes the following techno
 * Express.js: As the backend framework to handle API requests and serve static files.
 * React: For building the front-end user interface and rendering components.
 * Node.js: As the server-side runtime environment for running JavaScript code.
+* JavaScript: Used in the front-end to make asynchronous API requests to the backend server using Axios, a JavaScript library for handling HTTP requests
+* Thunder Client: As a Visual Studio Code extension to send HTTP requests and test APIs directly from within the editor.
 
 The front-end uses React components to handle user input and display weather data. The backend utilizes Express to create API endpoints for retrieving weather information based on user queries. The app makes API calls to external weather services to fetch real-time data for display.
 
