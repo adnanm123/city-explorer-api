@@ -67,8 +67,22 @@ Finish time: Thursday August 10th 5:00 p.m
 
 Actual time needed to complete: 1 day
 
+## Time Estimates lab 09
+
+Name of feature: Refactor: Modularize the back-end codebase
+
+Estimate of time needed to complete: 2 hours
+
+Start time: Wednesday August 15th 12:00 p.m
+
+Finish time: Thursday August 16th 1:00 p.m
+
+Actual time needed to complete: 1 day
+
 ## Web Request-Response Cycle
 
 ![Web Request-Response Cycle lab-07](web-request-response-cycle-lab-7.png)
 
 ![Web Request-Response Cycle lab-08](web-request-response-cycle-lab-8.png)
+
+![Web Request-Response Cycle lab-09](web-request-response-cycle-lab-9.png)
