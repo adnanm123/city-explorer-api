@@ -5,8 +5,8 @@
 const express = require("express");
 require("dotenv").config();
 const cors = require("cors");
-const displayWeather = require('./modules/weather');
-const displayMovie = require('./modules/movie');
+const displayWeather = require("./modules/myWeather");
+const getMovies = require("./modules/movie");
 
 // instantiate express server by calling express
 const app = express();
@@ -20,7 +20,17 @@ const PORT = process.env.PORT || 3002;
 // ROUTES
 app.get("/weather", displayWeather);
 
-app.get("/movies", displayMovie);
+app.get("/movies", movieHandler);
+
+function movieHandler(request, response) {
+  const location = request.query.location;
+  getMovies(location)
+    .then((summaries) => response.send(summaries))
+    .catch((error) => {
+      console.error(error);
+      response.status(500).send("Sorry. Something went wrong!");
+    });
+}
 
 app.get("/", (request, response) => {
   response.send("hello, from our server");

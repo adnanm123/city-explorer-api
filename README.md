@@ -79,6 +79,18 @@ Finish time: Thursday August 16th 1:00 p.m
 
 Actual time needed to complete: 1 day
 
+## Time Estimates lab 10
+
+Name of feature: Refactor: Performance
+
+Estimate of time needed to complete: 2 hours
+
+Start time: Wednesday August 15th 1:00 p.m
+
+Finish time: Thursday August 16th 5:00 p.m
+
+Actual time needed to complete: 4 hours
+
 ## Web Request-Response Cycle
 
 ![Web Request-Response Cycle lab-07](web-request-response-cycle-lab-7.png)
@@ -86,3 +98,5 @@ Actual time needed to complete: 1 day
 ![Web Request-Response Cycle lab-08](web-request-response-cycle-lab-8.png)
 
 ![Web Request-Response Cycle lab-09](web-request-response-cycle-lab-9.png)
+
+![Web Request-Response Cycle lab-10](web-request-response-cycle-lab-10.png)
